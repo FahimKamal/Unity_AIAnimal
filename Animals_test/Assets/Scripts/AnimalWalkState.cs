@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimalWalkState : MonoBehaviour
+public class AnimalWalkState : AnimalBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(AIAnimalStateManager animal)
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState(AIAnimalStateManager animal)
     {
-        
+        base.UpdateState(animal);
+    }
+
+    public override void ExitState(AIAnimalStateManager animal)
+    {
+        base.ExitState(animal);
+    }
+
+    public override void OnStateTriggerEnter(AIAnimalStateManager animal, Collider animalCollider)
+    {
+        base.OnStateTriggerEnter(animal, animalCollider);
     }
 }
