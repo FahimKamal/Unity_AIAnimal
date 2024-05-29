@@ -1,25 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
+using UnityEngine.Splines;
 
+public enum AnimalActions
+{
+    Idle, Walking, Sitting, Eating
+}
+    
+public static class AnimState
+{
+    public static string Idle = "Idle";
+    public static string Walking = "Walking";
+    public static string Sitting = "Sitting";
+    public static string Eating = "Eating";
+}
 public class AIAnimalStateManager : MonoBehaviour
 {
-    public enum AnimalActions
-    {
-        Idle, Walking, Sitting, Eating
-    }
     
-    public static class AnimState
-    {
-        public static string Idle = "Idle";
-        public static string Walking = "Walking";
-        public static string Sitting = "Sitting";
-        public static string Eating = "Eating";
-    }
-
     [SerializeField] private AnimalActions animalActions;
 
     [SerializeField] private float maxStandTime = 7f;
@@ -41,6 +38,8 @@ public class AIAnimalStateManager : MonoBehaviour
 
     public NavMeshAgent agent;
     public Animator animator;
+
+    [SerializeField] private SplineContainer wayPoints;
     
     private  bool _isBusy;
     [SerializeField] private string currentAnimState = AnimState.Idle;
@@ -54,6 +53,11 @@ public class AIAnimalStateManager : MonoBehaviour
         walkState = GetComponent<AnimalWalkState>();
         sitState = GetComponent<AnimalSitState>();
         eatingState = GetComponent<AnimalEatingState>();
+
+        var number = wayPoints[0].Knots;
+        
+        var something = wayPoints[0][2];
+        
     }
 
     private void Update()
