@@ -36,12 +36,15 @@ public class AnimalWaypoints : MonoBehaviour
             var defaultColor = GUI.color;
             if (i == selectedIndex)
             {
-                GUI.color = Color.red;
-                UnityEditor.Handles.Label(wayPoints[0][i].Position, $"Action:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}");
-                GUI.color = defaultColor;
+                GUIStyle style = new GUIStyle();
+                style.normal.textColor = Color.red; // Set the text color
+                style.fontSize = 28;
+                // GUI.color = Color.red;
+                UnityEditor.Handles.Label(wayPoints[0][i].Position, $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}", style);
+                // GUI.color = defaultColor;
                 continue;
             }
-            UnityEditor.Handles.Label(wayPoints[0][i].Position, $"Action:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}");
+            UnityEditor.Handles.Label(wayPoints[0][i].Position, $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}");
         }
         
     }

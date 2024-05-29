@@ -529,9 +529,9 @@ MonoBehaviour:
           z: 0
           w: 1
     - Position:
-        x: -8.55
+        x: -9.1
         y: 0
-        z: 5.33
+        z: 5.05
       TangentIn:
         x: 0
         y: 0
@@ -750,13 +750,14 @@ MonoBehaviour:
   - knotIndex: 6
     aiAction: 0
   - knotIndex: 7
-    aiAction: 0
+    aiAction: 2
   - knotIndex: 8
-    aiAction: 0
+    aiAction: 3
   - knotIndex: 9
     aiAction: 0
   - knotIndex: 10
     aiAction: 0
+  selectedIndex: 0
 --- !u!1 &1703603424
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +872,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703603424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
