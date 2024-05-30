@@ -7,57 +7,60 @@ public enum AnimalActions
     Idle, Walking, Sitting, Eating
 }
     
-public static class AnimState
-{
-    public static string Idle = "Idle";
-    public static string Walking = "Walking";
-    public static string Sitting = "Sitting";
-    public static string Eating = "Eating";
-}
+
 public class AIAnimalStateManager : MonoBehaviour
 {
+    public static class AnimState
+    {
+        public static string Idle = "Idle";
+        public static string Walking = "Walking";
+        public static string Sitting = "Sitting";
+        public static string Eating = "Eating";
+    }
     
-    [SerializeField] private AnimalActions animalActions;
+    public AnimalActions animalAction;
 
-    [SerializeField] private float maxStandTime = 7f;
-    [SerializeField] private float minStandTime = 5f;
-    [SerializeField] private float maxWalkTime = 19f;
-    [SerializeField] private float minWalkTime = 9f;
+    [SerializeField] private float maxStandTime = 2f;
+    [SerializeField] private float minStandTime = 3f;
+    [SerializeField] private float eatingTime = 5f;
+    [SerializeField] private float sittingTime = 9f;
     
     // Properties for accessing idle and walk time ranges.
     public float MaxStandTime => maxStandTime;
     public float MinStandTime => minStandTime;
-    public float MaxWalkTime => maxWalkTime;
-    public float MinWalkTime => minWalkTime;
+    public float EatingTime => eatingTime;
+    public float SittingTime => sittingTime;
     
     private AnimalBaseState _presentState;
-    [HideInInspector] public AnimalIdleState idleState;
-    [HideInInspector] public AnimalWalkState walkState;
-    [HideInInspector] public AnimalSitState sitState;
-    [HideInInspector] public AnimalEatingState eatingState;
+    [HideInInspector] public AnimalIdleState    idleState;
+    [HideInInspector] public AnimalWalkState    walkState;
+    [HideInInspector] public AnimalSitState     sitState;
+    [HideInInspector] public AnimalEatingState  eatingState;
 
     public NavMeshAgent agent;
     public Animator animator;
 
-    [SerializeField] private SplineContainer wayPoints;
+    public AnimalWaypoints animalWaypoints;
+
+    public WayPointKnot selectedWayPointKnot;
     
     private  bool _isBusy;
     [SerializeField] private string currentAnimState = AnimState.Idle;
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        agent        = GetComponent<NavMeshAgent>();
+        animator     = GetComponent<Animator>();
 
-        idleState = GetComponent<AnimalIdleState>();
-        walkState = GetComponent<AnimalWalkState>();
-        sitState = GetComponent<AnimalSitState>();
-        eatingState = GetComponent<AnimalEatingState>();
-
-        var number = wayPoints[0].Knots;
+        idleState    = GetComponent<AnimalIdleState>();
+        walkState    = GetComponent<AnimalWalkState>();
+        sitState     = GetComponent<AnimalSitState>();
+        eatingState  = GetComponent<AnimalEatingState>();
         
-        var something = wayPoints[0][2];
-        
+        // Initial State and entering the state.
+        animalAction  = AnimalActions.Idle;
+        _presentState = idleState;
+        _presentState.EnterState(this);
     }
 
     private void Update()

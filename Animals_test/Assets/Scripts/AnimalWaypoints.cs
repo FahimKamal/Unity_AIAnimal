@@ -1,10 +1,25 @@
 using System;
 using System.Collections.Generic;
-using QuickEye.Utility;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Splines;
+using Random = UnityEngine.Random;
+
+#region Serializables
+
+public enum AIAction
+{
+    None, Idle, Eat, Sit
+}
+[Serializable]
+public class WayPointKnot
+{
+    public bool isKnotSelected;
+    public int knotIndex;
+    public AIAction aiAction;
+}
+
+#endregion
 
 public class AnimalWaypoints : MonoBehaviour
 {
@@ -24,7 +39,32 @@ public class AnimalWaypoints : MonoBehaviour
         }
     }
 
+    public (float3 positionValue, quaternion rotationValue, AIAction action, WayPointKnot selectedWaypointKnot) GetRandomWayPoint()
+    {
+        var index = Random.Range(0, wayPointKnots.Count);
+        if (wayPointKnots[index].isKnotSelected)
+        {
+            return GetRandomWayPoint();
+        }
+        else
+        {
+            wayPointKnots[index].isKnotSelected = true;
+            var returnWayPoint = wayPoints[0][index];
+            return (returnWayPoint.Position, returnWayPoint.Rotation, wayPointKnots[index].aiAction, wayPointKnots[index]);
+        }
+    }
+    
+    public void ResetWayPoint(WayPointKnot wayPointKnot)
+    {
+        wayPointKnot.isKnotSelected = false;
+    }
+
     private void OnDrawGizmosSelected()
+    {
+        // Draw();
+    }
+
+    private void OnDrawGizmos()
     {
         Draw();
     }
@@ -50,13 +90,4 @@ public class AnimalWaypoints : MonoBehaviour
     }
 }
 
-public enum AIAction
-{
-    None, Idle, Eat, Sit
-}
-[Serializable]
-public class WayPointKnot
-{
-    public int knotIndex;
-    public AIAction aiAction;
-}
+

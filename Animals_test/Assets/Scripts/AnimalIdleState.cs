@@ -1,20 +1,38 @@
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AnimalIdleState : AnimalBaseState
 {
+    private float _timer;
+    private float _timerStopDuration;
+    
     public override void EnterState(AIAnimalStateManager animal)
     {
-        throw new System.NotImplementedException();
+        _timerStopDuration = Random.Range(animal.MinStandTime, animal.MaxStandTime);
+        animal.DebugLog("Entering Idle State");
+        animal.animalAction = AnimalActions.Idle;
+        if (animal.animalAction == AnimalActions.Idle)
+        {
+            animal.PlayAnimation(AIAnimalStateManager.AnimState.Idle);
+        }
     }
 
     public override void UpdateState(AIAnimalStateManager animal)
     {
-        base.UpdateState(animal);
+        _timer += Time.deltaTime;
+
+        if (_timer >= _timerStopDuration)
+        {
+            animal.SwitchState(animal.walkState);
+        }
     }
 
     public override void ExitState(AIAnimalStateManager animal)
     {
-        base.ExitState(animal);
+        _timer = 0.0f;
+        _timerStopDuration = 0.0f;
+        animal.DebugLog("Exiting Idle State");
     }
 
     public override void OnStateTriggerEnter(AIAnimalStateManager animal, Collider animalCollider)

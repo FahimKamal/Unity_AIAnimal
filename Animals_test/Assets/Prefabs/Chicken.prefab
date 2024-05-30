@@ -10,6 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4791614931789343822}
   - component: {fileID: 7053344005809849755}
+  - component: {fileID: 8213471133924374091}
+  - component: {fileID: 903500421012698985}
+  - component: {fileID: 103150422893221451}
+  - component: {fileID: 1817188072458638684}
+  - component: {fileID: 9102885828230294241}
+  - component: {fileID: 6385144727037635254}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -55,6 +61,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &8213471133924374091
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.02
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.04
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &903500421012698985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3871d646dae3b5c41ac00ef16df1e049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalAction: 0
+  maxStandTime: 2
+  minStandTime: 3
+  eatingTime: 5
+  sittingTime: 9
+  idleState: {fileID: 0}
+  walkState: {fileID: 0}
+  sitState: {fileID: 0}
+  eatingState: {fileID: 0}
+  agent: {fileID: 8213471133924374091}
+  animator: {fileID: 7053344005809849755}
+  animalWaypoints: {fileID: 0}
+  currentAnimState: Idle
+  showDebugLog: 1
+--- !u!114 &103150422893221451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c5b3820f2309d419ccd0aa718f7e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1817188072458638684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7472dae66041a694e86b4f5f8154f801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9102885828230294241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7eb741e2a3a5f4cb3acd7e4c59481c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6385144727037635254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782454234426909787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433a7b5ddc49442489da9071f05f2be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3256234178007474225
 GameObject:
   m_ObjectHideFlags: 0
