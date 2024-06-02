@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1107 &-5783199945708919128
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14,7 +14,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3198057031939233756}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 230, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4487135727059833642}
     m_Position: {x: 270, y: 130, z: 0}
@@ -33,12 +33,12 @@ AnimatorStateMachine:
   m_DefaultState: {fileID: 3198057031939233756}
 --- !u!1102 &-4487135727059833642
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sheep_Sitting
+  m_Name: Sitting
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -82,12 +82,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!1102 &3198057031939233756
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sheep_Idle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -109,12 +109,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &7933958327392686664
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sheep_Eating
+  m_Name: Eating
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -136,12 +136,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &8145575890948205168
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sheep_Walk
+  m_Name: Walking
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

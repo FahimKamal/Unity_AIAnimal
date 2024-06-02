@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1102 &-6417407767504454937
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dog_Idle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -29,12 +29,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &-5844579325707907658
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dog_Sitting
+  m_Name: Sitting
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -56,12 +56,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &-2833870233518754091
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dog_Eating
+  m_Name: Eating
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -83,7 +83,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &-2677796946628466065
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,12 +136,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!1102 &2486290254176050491
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dog_Walk
+  m_Name: Walking
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

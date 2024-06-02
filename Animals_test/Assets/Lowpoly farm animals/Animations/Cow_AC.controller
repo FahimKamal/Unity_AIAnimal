@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1102 &-4751713622090187292
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Walk
+  m_Name: Walking
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -51,12 +51,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
 --- !u!1102 &52278942225503009
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Sitting
+  m_Name: Sitting
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -78,7 +78,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &825070469988416409
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,12 +109,12 @@ AnimatorStateMachine:
   m_DefaultState: {fileID: 9222385159215045455}
 --- !u!1102 &4246237007228962616
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Eating
+  m_Name: Eating
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -136,12 +136,12 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &9222385159215045455
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cow_Idle
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
