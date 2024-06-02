@@ -12,10 +12,10 @@ public class AIAnimalStateManager : MonoBehaviour
 {
     public static class AnimState
     {
-        public static string Idle = "Idle";
-        public static string Walking = "Walking";
-        public static string Sitting = "Sitting";
-        public static string Eating = "Eating";
+        public const string Idle = "Idle";
+        public const string Walking = "Walking";
+        public const string Sitting = "Sitting";
+        public const string Eating = "Eating";
     }
     
     public AnimalActions animalAction;
@@ -50,7 +50,7 @@ public class AIAnimalStateManager : MonoBehaviour
     private void Start()
     {
         agent        = GetComponent<NavMeshAgent>();
-        animator     = GetComponent<Animator>();
+        // animator     = GetComponent<Animator>();
 
         idleState    = GetComponent<AnimalIdleState>();
         walkState    = GetComponent<AnimalWalkState>();
@@ -58,8 +58,8 @@ public class AIAnimalStateManager : MonoBehaviour
         eatingState  = GetComponent<AnimalEatingState>();
         
         // Initial State and entering the state.
-        animalAction  = AnimalActions.Idle;
-        _presentState = idleState;
+        animalAction  = AnimalActions.Walking;
+        _presentState = walkState;
         _presentState.EnterState(this);
     }
 

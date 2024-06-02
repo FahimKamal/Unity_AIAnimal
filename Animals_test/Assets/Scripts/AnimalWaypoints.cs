@@ -50,7 +50,11 @@ public class AnimalWaypoints : MonoBehaviour
         {
             wayPointKnots[index].isKnotSelected = true;
             var returnWayPoint = wayPoints[0][index];
-            return (returnWayPoint.Position, returnWayPoint.Rotation, wayPointKnots[index].aiAction, wayPointKnots[index]);
+            return (
+                (float3)wayPoints.transform.position + returnWayPoint.Position, 
+                wayPoints.transform.rotation * returnWayPoint.Rotation, 
+                wayPointKnots[index].aiAction, 
+                wayPointKnots[index]);
         }
     }
     
@@ -61,30 +65,35 @@ public class AnimalWaypoints : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Draw();
+        Draw();
     }
 
     private void OnDrawGizmos()
     {
-        Draw();
+        // Draw();
     }
 
     private void Draw()
     {
-        for (int i = 0; i < wayPointKnots.Count; i++)
+        for (var i = 0; i < wayPointKnots.Count; i++)
         {
             var defaultColor = GUI.color;
             if (i == selectedIndex)
             {
-                GUIStyle style = new GUIStyle();
+                var style = new GUIStyle();
                 style.normal.textColor = Color.red; // Set the text color
                 style.fontSize = 28;
                 // GUI.color = Color.red;
-                UnityEditor.Handles.Label(wayPoints[0][i].Position, $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}", style);
+                UnityEditor.Handles.Label(
+                    (float3)wayPoints.transform.position + wayPoints[0][i].Position, 
+                    $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}", style
+                    );
                 // GUI.color = defaultColor;
                 continue;
             }
-            UnityEditor.Handles.Label(wayPoints[0][i].Position, $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}");
+            UnityEditor.Handles.Label(
+                (float3)wayPoints.transform.position + wayPoints[0][i].Position, 
+                $"A:{ Enum.GetName(typeof(AIAction), wayPointKnots[i].aiAction)}");
         }
         
     }

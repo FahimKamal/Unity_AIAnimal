@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AnimalWalkState : AnimalBaseState
 {
-    public AIAction _nextAIAction;
+    private AIAction _nextAIAction;
     private float3 _aiDestination;
     // private WayPointKnot selectedWayPointKnot;
     public override void EnterState(AIAnimalStateManager animal)
