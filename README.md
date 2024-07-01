@@ -9,8 +9,9 @@ perform. At the moment tasks that I have assigned is:
 More activity can be added with them. All you have to create more different states. 
 
  <img src ="images\Screenshot-chicken.png" width="700"/>
-<center><font size=3><b>Chicken AI</b></font></center>
 <br>
+<center><font size=3><b>Picture: Chicken AI</b></font></center>
+
  <img src ="images\Screenshot-cow.png" width="700"/>
-<center><font size=3><b>Cow AI</b></font></center>
 <br>
+<center><font size=3><b>Picture: Cow AI</b></font></center>
