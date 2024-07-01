@@ -8,7 +8,7 @@ public class AnimalSitState : AnimalBaseState
     {
         animal.DebugLog("Entering Eating State");
         animal.animalAction = AnimalActions.Sitting;
-        animal.PlayAnimation(AIAnimalStateManager.AnimState.Sitting);
+        animal.PlayAnimation(AIAnimalStateManager.AnimationName.Sitting);
         _timerStopDuration = animal.SittingTime;
     }
 

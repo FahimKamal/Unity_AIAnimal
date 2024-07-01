@@ -14,7 +14,7 @@ public class AnimalIdleState : AnimalBaseState
         animal.animalAction = AnimalActions.Idle;
         if (animal.animalAction == AnimalActions.Idle)
         {
-            animal.PlayAnimation(AIAnimalStateManager.AnimState.Idle);
+            animal.PlayAnimation(AIAnimalStateManager.AnimationName.Idle);
         }
     }
 

@@ -24,7 +24,7 @@ public class AnimalWalkState : AnimalBaseState
             animal.DebugLog($"Walking to {_aiDestination}");
             animal.agent.SetDestination((Vector3)_aiDestination);
 
-            animal.PlayAnimation(AIAnimalStateManager.AnimState.Walking);
+            animal.PlayAnimation(AIAnimalStateManager.AnimationName.Walking);
         }
     }
 

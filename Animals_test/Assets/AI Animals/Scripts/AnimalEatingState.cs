@@ -8,7 +8,7 @@ public class AnimalEatingState : AnimalBaseState
     {
         animal.DebugLog("Entering Eating State");
         animal.animalAction = AnimalActions.Eating;
-        animal.PlayAnimation(AIAnimalStateManager.AnimState.Eating);
+        animal.PlayAnimation(AIAnimalStateManager.AnimationName.Eating);
         _timerStopDuration = animal.EatingTime;
     }
 

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Splines;
 
 public enum AnimalActions
 {
@@ -10,7 +9,7 @@ public enum AnimalActions
 
 public class AIAnimalStateManager : MonoBehaviour
 {
-    public static class AnimState
+    public static class AnimationName
     {
         public const string Idle = "Idle";
         public const string Walking = "Walking";
@@ -45,7 +44,7 @@ public class AIAnimalStateManager : MonoBehaviour
     public WayPointKnot selectedWayPointKnot;
     
     private  bool _isBusy;
-    [SerializeField] private string currentAnimState = AnimState.Idle;
+    [SerializeField] private string currentAnimName = AnimationName.Idle;
 
     private void Start()
     {
@@ -97,9 +96,9 @@ public class AIAnimalStateManager : MonoBehaviour
     internal void PlayAnimation(string newState)
     {
         // If the given animation state is already playing, do nothing. 
-        if (currentAnimState == newState) return;
+        if (currentAnimName == newState) return;
         
-        currentAnimState = newState;
+        currentAnimName = newState;
         animator.CrossFade(newState, 0.08f);
     }
 }
